@@ -1,0 +1,253 @@
+/* =====================================================================
+   PALACIO DE FESTIVALES
+   ===================================================================== */
+
+:root {
+  --tela-negra:   #15100f;
+  --tela-panel:   #241a1d;
+  --tela-panel-2: #2e2023;
+  --oro:          #c9a24b;
+  --oro-suave:    #e3c877;
+  --granate:      #7c2434;
+  --granate-luz:  #a53a4a;
+  --crema:        #efe6d8;
+  --crema-tenue:  #b9aa9a;
+  --exito:        #5c8a5c;
+  --peligro:      #b3413f;
+
+  --fuente-display: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo:  'Inter', 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--tela-negra);
+  background-image:
+    radial-gradient(ellipse at top, rgba(201,162,75,0.08), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 80px);
+  color: var(--crema);
+  font-family: var(--fuente-cuerpo);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .marquesina {
+  font-family: var(--fuente-display);
+}
+
+
+.navbar-marquesina {
+  background: linear-gradient(180deg, #1c1416, #120d0e);
+  border-bottom: 2px solid var(--oro);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+
+.navbar-marquesina .navbar-brand {
+  font-family: var(--fuente-display);
+  font-size: 1.5rem;
+  color: var(--oro-suave) !important;
+  letter-spacing: 0.5px;
+}
+
+.navbar-marquesina .navbar-brand .marquesina-sub {
+  display: block;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.62rem;
+  letter-spacing: 3px;
+  color: var(--crema-tenue);
+  text-transform: uppercase;
+}
+
+.navbar-marquesina .nav-link {
+  color: var(--crema-tenue) !important;
+  font-size: 0.92rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px !important;
+  transition: color .15s ease, border-color .15s ease;
+}
+.navbar-marquesina .nav-link:hover,
+.navbar-marquesina .nav-link.active {
+  color: var(--oro-suave) !important;
+  border-bottom-color: var(--oro);
+}
+
+/* ---------- Contenedores / tarjetas ---------- */
+.panel {
+  background: var(--tela-panel);
+  border: 1px solid rgba(201,162,75,0.25);
+  border-radius: 10px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.panel-titulo {
+  color: var(--oro-suave);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(201,162,75,0.25);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- Tabla ---------- */
+.table-teatro {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--crema);
+  border-color: rgba(201,162,75,0.2);
+}
+.table-teatro thead th {
+  color: var(--oro-suave);
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  border-bottom: 2px solid var(--oro);
+  background: rgba(201,162,75,0.06);
+  white-space: nowrap;
+}
+.table-teatro tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.table-teatro tbody tr:hover {
+  background: rgba(201,162,75,0.07);
+}
+
+/* ---------- Botones ---------- */
+.btn-oro {
+  background: linear-gradient(180deg, var(--oro-suave), var(--oro));
+  border: none;
+  color: #251a0d;
+  font-weight: 600;
+}
+.btn-oro:hover { filter: brightness(1.08); color: #251a0d; }
+
+.btn-granate {
+  background: var(--granate);
+  border: 1px solid var(--granate-luz);
+  color: var(--crema);
+}
+.btn-granate:hover { background: var(--granate-luz); color: var(--crema); }
+
+.btn-outline-oro {
+  border: 1px solid var(--oro);
+  color: var(--oro-suave);
+  background: transparent;
+}
+.btn-outline-oro:hover { background: rgba(201,162,75,0.15); color: var(--oro-suave); }
+
+/* ---------- Formularios / Modales ---------- */
+.modal-content {
+  background: var(--tela-panel-2);
+  border: 1px solid rgba(201,162,75,0.3);
+  color: var(--crema);
+}
+.modal-header, .modal-footer { border-color: rgba(201,162,75,0.2); }
+
+.form-control, .form-select {
+  background: #1a1315;
+  border: 1px solid rgba(201,162,75,0.3);
+  color: var(--crema);
+}
+.form-control:focus, .form-select:focus {
+  background: #1a1315;
+  color: var(--crema);
+  border-color: var(--oro);
+  box-shadow: 0 0 0 0.2rem rgba(201,162,75,0.25);
+}
+.form-control::placeholder { color: var(--crema-tenue); opacity: .6; }
+.form-label { color: var(--crema-tenue); font-size: 0.88rem; letter-spacing: .3px; }
+
+.invalid-feedback { color: #ff9d9a; }
+.form-control.is-invalid, .form-select.is-invalid {
+  border-color: var(--peligro);
+}
+
+/* ---------- Badges de estado ---------- */
+.badge-activa, .badge-disponible, .badge-programada { background: var(--exito) !important; }
+.badge-inactiva, .badge-mantenimiento, .badge-cancelada, .badge-anulada { background: var(--peligro) !important; }
+.badge-finalizada { background: #6b6250 !important; }
+
+/* ---------- Tarjetas de módulo (home) ---------- */
+.tarjeta-modulo {
+  background: var(--tela-panel);
+  border: 1px solid rgba(201,162,75,0.25);
+  border-radius: 10px;
+  padding: 1.75rem;
+  height: 100%;
+  text-decoration: none;
+  color: var(--crema);
+  display: block;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  position: relative;
+  overflow: hidden;
+}
+.tarjeta-modulo::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--oro), var(--granate));
+}
+.tarjeta-modulo:hover {
+  transform: translateY(-4px);
+  border-color: var(--oro);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+  color: var(--crema);
+}
+.tarjeta-modulo .icono {
+  font-size: 1.8rem;
+  color: var(--oro-suave);
+}
+.tarjeta-modulo h3 {
+  font-size: 1.25rem;
+  margin: 0.6rem 0 0.35rem;
+  color: var(--oro-suave);
+}
+.tarjeta-modulo p {
+  color: var(--crema-tenue);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ---------- Boleto (ticket stub) para ENTRADA ---------- */
+.boleto {
+  background: linear-gradient(135deg, #2b1e21, #1d1517);
+  border: 1px dashed rgba(201,162,75,0.5);
+  border-radius: 10px;
+  position: relative;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.9rem;
+}
+.boleto::before, .boleto::after {
+  content: "";
+  position: absolute;
+  width: 18px; height: 18px;
+  background: var(--tela-negra);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.boleto::before { left: -10px; }
+.boleto::after  { right: -10px; }
+.boleto .codigo {
+  font-family: var(--fuente-display);
+  color: var(--oro-suave);
+  letter-spacing: 2px;
+  font-size: 1.05rem;
+}
+
+/* ---------- Utilidades ---------- */
+.texto-oro { color: var(--oro-suave) !important; }
+.texto-tenue { color: var(--crema-tenue) !important; }
+.hr-oro { border-top: 1px solid rgba(201,162,75,0.25); }
+
+footer.pie {
+  color: var(--crema-tenue);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.spinner-oro {
+  color: var(--oro);
+}
