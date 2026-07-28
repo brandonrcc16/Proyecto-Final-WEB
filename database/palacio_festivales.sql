@@ -3,11 +3,6 @@
 -- Modelo Entidad-Relación (MER) - Base de datos MySQL / MariaDB (XAMPP)
 -- Entidades: SALA, ESPECTACULO, ACTUACION, ZONA, BUTACA, ENTRADA
 -- =====================================================================
-
-DROP DATABASE IF EXISTS palacio_festivales;
-CREATE DATABASE palacio_festivales CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
-USE palacio_festivales;
-
 -- ---------------------------------------------------------------------
 -- Tabla: USUARIO
 -- Usuario administrador del sistema (control de acceso / login).
@@ -153,3 +148,5 @@ INSERT INTO butaca (id_zona, fila, numero) VALUES
 (1,'A',1),(1,'A',2),(1,'A',3),(1,'A',4),
 (2,'B',1),(2,'B',2),(2,'B',3),(2,'B',4),
 (3,'C',1),(3,'C',2),(3,'C',3),(3,'C',4);
+
+
